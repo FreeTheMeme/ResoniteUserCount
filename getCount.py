@@ -6,7 +6,7 @@ def getUserCount():
     url = 'https://api.resonite.com/sessions'
     try:
         response = requests.get(url).json()
-        # Sum up the activeUsers
+        # Sum up the activeUsers from json
         for entry in response:
             users += entry.get("activeUsers", 0)
         print("Total active users:", users)
