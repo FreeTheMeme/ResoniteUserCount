@@ -1,5 +1,4 @@
 import requests
-import time
 
 def getUserCount():
     users = 0
