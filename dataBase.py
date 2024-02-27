@@ -9,4 +9,4 @@ conn = psycopg2.connect(
     port="5432",
     )
     # add row
-    cur = conn.cursor()
+cur = conn.cursor()
