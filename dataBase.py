@@ -20,3 +20,30 @@ def addrow(uesrs):
     cur.close()
     conn.close()
     print("added row ",uesrs," here")
+
+
+def getdata(id):
+    conn = psycopg2.connect(database="resoniteUserCount",
+                        host="10.0.0.104",
+                        user="postgres",
+                        password=passwords.DBpassword,
+                        port="5432")
+    # Create a cursor object to execute SQL commands
+    cur = conn.cursor()
+
+    # SQL command to query all data from the table
+    query = 'SELECT * FROM resoniteUserCount_data WHERE id ='+ str(id)
+
+    # Execute the SQL command
+    cur.execute(query)
+
+    # Fetch all rows from the query result
+    rows = cur.fetchall()
+
+    # Iterate through the rows and print each one
+    for row in rows:
+        print(row)
+
+    # Close the cursor and connection
+    cur.close()
+    conn.close()
